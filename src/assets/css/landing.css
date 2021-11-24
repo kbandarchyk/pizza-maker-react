@@ -1,0 +1,248 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #000000;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+}
+
+*, *:after, *:before {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1225px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    min-width: 120px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.21em;
+    letter-spacing: 0.015em;
+    text-transform: capitalize;
+    padding: 12px 16px;
+    border-radius: 100px;
+    border: 0;
+}
+
+.btn__red {
+    background-color: #FE5F1E;
+    color: #FFFFFF;
+}
+
+.btn__white {
+    background-color: #FFFFFF;
+    color: #EB5A1E;
+    border: 1px solid #EB5A1E;
+}
+
+.btn__gray {
+    background-color: #F9F9F9;
+    color: #2C2C2C;
+}
+
+
+/* --------------HEADER---------------- */
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    height: 140px;
+    border-bottom: 1px solid #F6F6F6;
+}
+
+.header__logo {
+    display: grid;
+    grid-template-areas: "logo title"
+                         "logo description";
+    margin-right: auto;
+}
+
+.header__logo > img {
+    grid-area: logo;
+    margin-right: 15px;
+    height: 100%;
+    width: auto;
+
+}
+
+.header__logo > h2 {
+    grid-area: title;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.20em;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+}
+
+.header__logo > p {
+    grid-area: description;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.21em;
+    color: #7B7B7B;
+}
+
+.header__basket {
+    margin-left: auto;
+}
+
+/* --------------CONTENT-SELECTOR---------------- */
+
+.content-selector {
+    padding: 40px 0;
+}
+
+.content-selector__inner {
+    display: flex;
+}
+
+.filter-buttons {
+    display: flex;
+    margin-right: auto;
+}
+
+.filter-button {
+    margin-right: 10px;
+}
+
+.filter-button.active {
+    background-color: #282828;
+    color: #FFFFFF;
+}
+
+.sorting {
+    display: flex;
+    align-items: center;
+}
+
+.sorting > h2 {
+    margin-right: 5px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.sorting > a {
+    color: #FE5F1E;
+    text-decoration-style: dashed;
+}
+
+/* --------------CONTENT---------------- */
+
+.content {
+    padding-bottom: 20px;
+}
+
+.content__title {
+    font-size: 32px;
+    font-weight: 700;
+    color:#000000;
+    line-height: 1.21em;
+    letter-spacing: 0.01em;
+    margin-bottom: 35px;
+}
+
+.pizza-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 65px;
+    column-gap: 35px;
+}
+
+.pizza-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pizza-card__logo {
+    margin-bottom: 10px;
+}
+
+.pizza-card__title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000000;
+    line-height: 1.21em;
+    letter-spacing: 0.01em;
+    margin-bottom: 20px;
+}
+
+.pizza-card__selector {
+    background: #F3F3F3;
+    border-radius: 10px;
+    padding: 5px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.selector__dough {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.selector__size {
+    display: flex;
+    justify-content: space-between;
+}
+
+.selector__button {
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.21em;
+    letter-spacing: 0.015em;
+    padding: 12px 16px;
+    border-radius: 5px;
+    color: #2C2C2C;
+    border: 0;
+}
+
+.selector__button.active {
+    background-color: #FFFFFF;
+}
+
+.selector_button_half_part {
+    width: 49%;
+}
+
+.selector_button_third_part {
+    width: 32%;
+}
+
+.pizza-card__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-left: 10px;
+}
+
+.pizza-card__footer > h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #000000;
+    line-height: 1.21em;
+    letter-spacing: 0.01em;
+}
+
+
+
+
