@@ -10,7 +10,7 @@ export default class Pizza {
     private readonly _availableSizes: PizzaSizeType[];
     private readonly _selectorTypes: PizzaSelectorType[];
     private readonly _currentSelectorType: PizzaSelectorType;
-    private readonly _tags: string[];
+    private readonly _tagIds: number[];
 
     constructor( id: number,
                  name: string,
@@ -18,14 +18,14 @@ export default class Pizza {
                  availableSizes: PizzaSizeType[],
                  selectorTypes: PizzaSelectorType[],
                  currentSelectorType: PizzaSelectorType,
-                 tags: string[] ) {
+                 tagIds: number[] ) {
         this._id = id;
         this._name = name;
         this._availableDoughs = availableDoughs;
         this._availableSizes = availableSizes;
         this._selectorTypes = selectorTypes;
         this._currentSelectorType = currentSelectorType;
-        this._tags = tags;
+        this._tagIds = tagIds;
     }
 
     selectDough( newDoughType: PizzaDoughType ): Pizza {
@@ -43,7 +43,25 @@ export default class Pizza {
         }
 
         return new Pizza( this.id, this.name, this.availableDoughs, this.availableSizes,
-                          this.selectorTypes, newSelectorType, this.tags );
+                          this.selectorTypes, newSelectorType, this.tagIds );
+    }
+
+    selectSize( newSizeType: PizzaSizeType ): Pizza {
+
+        if( !this.availableSizes.some( e => e === newSizeType ) ) {
+            console.log( `This pizza ${this} is not available with sizeType: ${newSizeType}` );
+            return this;
+        }
+
+        let newSelectorType = this.selectorTypes.find( PizzaSelectorType.isFor( this.currentSelectorType.dough, newSizeType ) );
+
+        if( newSelectorType === undefined ) {
+            console.log( `Can not be found selectorType with dough: ${this.currentSelectorType.dough} and size: ${newSizeType} in pizza: ${this}`);
+            return this;
+        }
+
+        return new Pizza( this.id, this.name, this.availableDoughs, this.availableSizes,
+                          this.selectorTypes, newSelectorType, this.tagIds );
     }
 
     static isFor( pizzaIdToCheck: number ) {
@@ -74,8 +92,8 @@ export default class Pizza {
         return this._currentSelectorType;
     }
 
-    get tags(): string[] {
-        return this._tags;
+    get tagIds(): number[] {
+        return this._tagIds;
     }
 
     toString() {

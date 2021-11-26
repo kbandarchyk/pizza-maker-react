@@ -4,9 +4,11 @@ import './index.css';
 import App from './App';
 import {Provider} from "react-redux";
 import {applyMiddleware, createStore} from "redux";
-import {rootReducer} from "./redux/rootReducer";
+import {appReducer} from "./redux/appReducer";
 
-const store = createStore( rootReducer, applyMiddleware() ) ;
+
+// @ts-ignore
+const store = createStore( appReducer, applyMiddleware() ) ;
 
 ReactDOM.render(
   <React.StrictMode>

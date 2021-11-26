@@ -27,7 +27,13 @@ export default class PizzaSelectorType {
         return this._cost;
     }
 
+    isEqual( pizzaSelectorTypeToCheck: PizzaSelectorType ):boolean {
+        return this.dough === pizzaSelectorTypeToCheck.dough
+            && this.size === pizzaSelectorTypeToCheck.size;
+    }
+
     static isFor( doughToCheck: PizzaDoughType, sizeToCheck: PizzaSizeType ) {
         return (e: PizzaSelectorType) => e.dough === doughToCheck && e.size === sizeToCheck;
     }
+
 }
